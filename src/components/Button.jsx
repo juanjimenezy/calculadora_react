@@ -1,12 +1,17 @@
 import React from 'react';
 import styles from "../css/Button.module.css";
 
-export const Button = ({ color, dato }) => {
+export const Button = ({ color, dato, addValue, cleanValue, calculateResult }) => {
 
-  function prueba (dato) {
-    console.log(dato);
-  }
-
+  const operate = () => {
+    if (dato === "=")
+      calculateResult();
+    else if(dato === "AC")
+      cleanValue();
+    else 
+      addValue(dato)
+  };
+  
     let btnColor = "";
   switch (color) {
     case "w":
@@ -25,7 +30,7 @@ export const Button = ({ color, dato }) => {
 
     return (
         <div className={styles.containerBtn}>
-          <button type="button" onClick={prueba(dato)} className={`${styles.btn} ${btnColor}`} >{dato}</button>
+          <button className={`${styles.btn} ${btnColor}`} onClick={operate}>{dato}</button>
         </div>
     )
 }

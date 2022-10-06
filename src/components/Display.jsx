@@ -2,13 +2,9 @@ import React from 'react';
 import styles from "../css/display.module.css";
 
 
-export const Display = (props) => {
-    const num1 = 2;
-    const num2 = 3;
-    const op = '+';
-    var result = 0;
+export const Display = ({ value, result }) => {
 
-
+  
     return (
         <div className={styles.display}>
             <div className={styles.mode}>
@@ -18,8 +14,7 @@ export const Display = (props) => {
                 </span>
             </div>
             <div className={styles.operation}>
-                {num1}<span className={styles.operador}> {op} </span> {num2}
-
+                {value}
             </div>
             <div className={styles.result}>{result}</div>
         </div>
