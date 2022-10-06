@@ -7,26 +7,23 @@ export const Board = ({ addValue, calculateResult, cleanValue }) => {
 
 
     const datos = [
-        { color: "g", dato: "AC" },
-        { color: "g", dato: "<-" },
-        { color: "g", dato: "%" },
-        { color: "r", dato: "/" },
         { color: "w", dato: 7 },
         { color: "w", dato: 8 },
         { color: "w", dato: 9 },
-        { color: "r", dato: "*" },
+        { color: "r", dato: "/" },
         { color: "w", dato: 4 },
         { color: "w", dato: 5 },
         { color: "w", dato: 6 },
-        { color: "r", dato: "-" },
+        { color: "r", dato: "*" },
         { color: "w", dato: 1 },
         { color: "w", dato: 2 },
         { color: "w", dato: 3 },
-        { color: "r", dato: "+" },
-        { color: "w", dato: "⭮" },
+        { color: "r", dato: "-" },
+        { color: "g", dato: "AC" },
         { color: "w", dato: "0" },
         { color: "w", dato: "." },
-        { color: "r", dato: "=" },
+        { color: "r", dato: "+" },
+        { color: "q", dato: "=" },
       ];
 
     return (

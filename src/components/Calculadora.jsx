@@ -19,7 +19,7 @@ export const Calculadora = () => {
     }
 
     const cleanValue = () => {
-        setValue("")
+        setValue("");
         setResult(0);
     }
 

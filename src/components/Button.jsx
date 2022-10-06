@@ -23,6 +23,9 @@ export const Button = ({ color, dato, addValue, cleanValue, calculateResult }) =
     case "r":
       btnColor = styles.btnRed;
       break;
+    case "q":
+        btnColor = styles.btnEquals;
+        break;
     default:
       btnColor = "";
       break;
