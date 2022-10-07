@@ -23,16 +23,16 @@ export const Calculadora = () => {
 
         if(newValue === '+' && vstr.split('+').length < 3){
 
-            if(!value){
-                //TODO: sumar con el resultado.
-                console.log(result);
-                var preValue = result;
-                setValue(preValue + 0);
-                //console.log('value: ' + value);
-            }
+            
             console.log(vstr.includes('-'));
             if (!vstr.includes('-') && !vstr.includes('*') && !vstr.includes('/')){
-                setValue(value+newValue);
+                if(!value){
+                    //TODO: sumar con el resultado.
+                    setValue(result+newValue);
+                }else{
+                    setValue(value+newValue);
+                }
+                
                 setFlagPoint(true);
             }
             
