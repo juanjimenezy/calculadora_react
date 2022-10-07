@@ -42,19 +42,23 @@ export const Calculadora = () => {
             if (!vstr.includes('+') && !vstr.includes('*') && !vstr.includes('/')){
                 setValue(value+newValue);
             }
-            
+            setFlagPoint(true);
         }
 
         if(newValue === '*' && vstr.split('*').length < 3){
             if (!vstr.includes('-') && !vstr.includes('+') && !vstr.includes('/')){
                 setValue(value+newValue);
+                
             }
+            setFlagPoint(true);
         }
 
         if(newValue === '/' && vstr.split('/').length < 3){
             if (!vstr.includes('-') && !vstr.includes('*') && !vstr.includes('+')){
                 setValue(value+newValue);
+                
             }
+            setFlagPoint(true);
         }
 
         if (newValue >= 0){
