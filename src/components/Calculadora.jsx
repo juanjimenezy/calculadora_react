@@ -10,12 +10,15 @@ export const Calculadora = () => {
     const [value, setValue] = React.useState('');
     const [result, setResult] = React.useState(0);
     const [historial, setHistorial] = React.useState('');
+    const [flagPoint, setFlagPoint] = React.useState(true);
 
     const addValue = (newValue) => {
         var vstr = value+newValue;
 
-        if(newValue === '.' && vstr.split('.').length < 3){
+        console.log(flagPoint);
+        if(newValue === '.' && flagPoint){
             setValue(value+newValue);
+            setFlagPoint(false);
         }
 
         if(newValue === '+' && vstr.split('+').length < 3){
@@ -30,6 +33,7 @@ export const Calculadora = () => {
             console.log(vstr.includes('-'));
             if (!vstr.includes('-') && !vstr.includes('*') && !vstr.includes('/')){
                 setValue(value+newValue);
+                setFlagPoint(true);
             }
             
         }
@@ -66,12 +70,14 @@ export const Calculadora = () => {
         
         setResult(stringMath(value));
         setValue('');
+        setFlagPoint(true);
         
     }
 
     const cleanValue = () => {
         setValue("");
         setResult(0);
+        setFlagPoint(true);
     }
 
     const limpiarHistorial = () => {
