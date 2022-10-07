@@ -19,28 +19,53 @@ export const Calculadora = () => {
         }
 
         if(newValue === '+' && vstr.split('+').length < 3){
-            setValue(value+newValue);
+
+            if(!value){
+                //TODO: sumar con el resultado.
+                console.log(result);
+                var preValue = result;
+                setValue(preValue + 0);
+                //console.log('value: ' + value);
+            }
+            console.log(vstr.includes('-'));
+            if (!vstr.includes('-') && !vstr.includes('*') && !vstr.includes('/')){
+                setValue(value+newValue);
+            }
+            
         }
 
         if(newValue === '-' && vstr.split('-').length < 3){
-            setValue(value+newValue);
+            if (!vstr.includes('+') && !vstr.includes('*') && !vstr.includes('/')){
+                setValue(value+newValue);
+            }
+            
         }
 
         if(newValue === '*' && vstr.split('*').length < 3){
-            setValue(value+newValue);
+            if (!vstr.includes('-') && !vstr.includes('+') && !vstr.includes('/')){
+                setValue(value+newValue);
+            }
+        }
+
+        if(newValue === '/' && vstr.split('/').length < 3){
+            if (!vstr.includes('-') && !vstr.includes('*') && !vstr.includes('+')){
+                setValue(value+newValue);
+            }
         }
 
         if (newValue >= 0){
             setValue(value+newValue);
         }
-        //setValue(value+newValue);
+
     };
 
     const calculateResult = () => {
-        setHistorial(historial + '|' + value);
+        if (value) {
+            setHistorial(historial + '|' + value);
+        }
+        
         setResult(stringMath(value));
         setValue('');
-        console.log(historial);
         
     }
 
