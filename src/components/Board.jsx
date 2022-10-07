@@ -3,7 +3,7 @@ import Button from './Button';
 
 import styles from '../css/board.module.css';
 
-export const Board = ({ addValue, calculateResult, cleanValue }) => {
+export const Board = ({ addValue, calculateResult, cleanValue, limpiarHistorial }) => {
 
 
     const datos = [
@@ -19,17 +19,18 @@ export const Board = ({ addValue, calculateResult, cleanValue }) => {
         { color: "w", dato: 2 },
         { color: "w", dato: 3 },
         { color: "r", dato: "-" },
-        { color: "g", dato: "AC" },
         { color: "w", dato: "0" },
         { color: "w", dato: "." },
-        { color: "r", dato: "+" },
         { color: "q", dato: "=" },
+        { color: "r", dato: "+" },
+        { color: "g", dato: "AC" },
+        { color: "g", dato: "LH" }
       ];
 
     return (
         <div className={styles.board} >
           {datos.map((e, i) => (
-            <Button cleanValue={cleanValue} calculateResult={calculateResult} addValue={addValue} key={i} color={e.color} dato={e.dato}> </Button>
+            <Button cleanValue={cleanValue} calculateResult={calculateResult} addValue={addValue} limpiarHistorial={limpiarHistorial} key={i} color={e.color} dato={e.dato}> </Button>
           ))}
     </div>
     )

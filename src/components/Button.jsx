@@ -1,13 +1,15 @@
 import React from 'react';
 import styles from "../css/Button.module.css";
 
-export const Button = ({ color, dato, addValue, cleanValue, calculateResult }) => {
+export const Button = ({ color, dato, addValue, cleanValue, calculateResult,limpiarHistorial }) => {
 
   const operate = () => {
     if (dato === "=")
       calculateResult();
     else if(dato === "AC")
       cleanValue();
+    else if(dato === "LH")
+      limpiarHistorial();
     else 
       addValue(dato)
   };

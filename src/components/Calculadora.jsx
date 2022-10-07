@@ -49,10 +49,14 @@ export const Calculadora = () => {
         setResult(0);
     }
 
+    const limpiarHistorial = () => {
+        setHistorial("");
+    }
+
     return (
         <div className={styles.calculadora}>
             <Display value={value} result={result} historial={historial}/>
-            <Board addValue={addValue} calculateResult={calculateResult} cleanValue={cleanValue}/>
+            <Board addValue={addValue} calculateResult={calculateResult} cleanValue={cleanValue} limpiarHistorial={limpiarHistorial}/>
         </div>
     )
 }
